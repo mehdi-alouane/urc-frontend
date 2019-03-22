@@ -3,12 +3,10 @@
     <div class="container">
       <div class="columns is-multiline">
         <div class="column is-4" v-for="nearbyShop in nearbyShops" :key="nearbyShop.id">
-          <div class="box">
-            <p>{{ nearbyShop.name }} , {{ nearbyShop.city }}</p>
-            <figure class="image">
-              <img :src="nearbyShop.picture">
-            </figure>
-          </div>
+          <shop-card
+          :shopName=nearbyShop.name
+          :shopLocation=nearbyShop.city
+          :shopPicture=nearbyShop.picture />
         </div>
       </div>
     </div>
@@ -17,9 +15,13 @@
 
 <script>
 import axios from '@/services/axios'
+import shopCard from '@/components/shopCard'
 
 export default {
   name: 'home',
+  components: {
+    shopCard
+  },
   data: () => ({
     coordinates: null,
     nearbyShops: [],
