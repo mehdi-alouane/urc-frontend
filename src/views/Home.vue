@@ -1,12 +1,22 @@
 <template>
   <section class="section">
+    <navbar />
+
+    <div class="section" />
     <div class="container">
       <div class="columns is-multiline">
-        <div class="column is-4" v-for="nearbyShop in nearbyShops" :key="nearbyShop.id">
+        <div
+          v-for="nearbyShop in nearbyShops"
+          :key="nearbyShop.id"
+          class="column is-3"
+        >
           <shop-card
-          :shopName=nearbyShop.name
-          :shopLocation=nearbyShop.city
-          :shopPicture=nearbyShop.picture />
+            is-in-nearby-shops="true"
+            :shop-name="nearbyShop.name"
+            :shop-location="nearbyShop.city"
+            :shop-picture="nearbyShop.picture"
+            :shop-id="nearbyShop._id"
+          />
         </div>
       </div>
     </div>
@@ -14,33 +24,35 @@
 </template>
 
 <script>
-import axios from '@/services/axios'
 import shopCard from '@/components/shopCard'
+import navbar from '@/components/navbar'
 
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
-    shopCard
+    shopCard,
+    navbar
   },
   data: () => ({
     coordinates: null,
     nearbyShops: [],
     page: 1
   }),
+  created () {
+    this.getNearbyShops()
+    this.$store.dispatch('setUser')
+  },
   methods: {
     async getNearbyShops () {
       const coordinates = await this.$getLocation()
       this.coordinates = [coordinates.lat, coordinates.lng].join(',')
 
       const api = `/shops/nearby/${this.coordinates}?page=${this.page}`
-      const { data } = await axios.get(api)
+      const { data } = await this.axios.get(api)
 
       // console.log(data)
       this.nearbyShops = data.nearByShops
     }
-  },
-  created () {
-    this.getNearbyShops()
   }
 }
 </script>
