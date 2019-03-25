@@ -9568,6 +9568,11 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-axios@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/vue-axios/-/vue-axios-2.1.4.tgz#a9d298f7e876f9a87feb336b37adcbce34ff9f9f"
+  integrity sha512-DS8Q+WFT3i7nS0aZ/NMmTPf2yhbtlXhj4QEZmY69au/BshsGzGjC6dXaniZaPQlErP3J3Sv1HtQ4RVrXaUTkxA==
+
 vue-browser-geolocation@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/vue-browser-geolocation/-/vue-browser-geolocation-1.5.0.tgz#bbae3a01e8066c5526b921d7762aca8866cfd16f"
