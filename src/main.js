@@ -3,11 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import VueGeolocation from 'vue-browser-geolocation'
-import axios from './services/axios'
+import axios from '@/services/axios'
+import VueAxios from 'vue-axios'
 
 Vue.use(VueGeolocation)
-
-Vue.prototype.axios = axios
+Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false
 
