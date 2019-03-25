@@ -1,8 +1,11 @@
 <template>
   <section class="section">
-    <div class="columns is-centered">
-      <div class="column is-5">
-        <register-form />
+    <div class="section" />
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-5">
+          <register-form />
+        </div>
       </div>
     </div>
   </section>

@@ -1,7 +1,8 @@
 <template>
   <section class="section">
+    <div class="section" />
     <div class="columns is-centered">
-      <div class="column is-7">
+      <div class="column is-5">
         <login-form />
       </div>
     </div>
