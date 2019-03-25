@@ -70,12 +70,10 @@ export default {
       console.log(req)
     },
     async removeFromPreferredShops () {
-      const req = await this.axios.post('/shops/preferred-shops', {
-        shopId: this.shopId,
-        userId: this.$store.state.user._id
+      this.$store.dispatch('removeFromPreferredShops', {
+        userId: this.$store.state.user._id,
+        shopId: this.shopId
       })
-
-      console.log(req)
     }
   }
 }
