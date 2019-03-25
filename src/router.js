@@ -12,7 +12,7 @@ Vue.use(Router)
 const routes = [
   { path: '/', name: 'home', component: homeView, meta: { requiresAuth: true } },
   { path: '/login', name: 'login', component: loginView },
-  { path: '/register', name: 'regiser', component: regiserView },
+  { path: '/register', name: 'register', component: regiserView },
   { path: '/preferred', name: 'preferredShops', component: preferredShopsView, meta: { requiresAuth: true } }
 ]
 
